@@ -1,0 +1,13 @@
+.app {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: antiquewhite;
+  max-width: 70%;
+  margin: 0 auto;
+}
+.app h1 {
+  font-size: 30px;
+}
+.table {
+  margin: 0 auto;
+}
