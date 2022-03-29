@@ -4,10 +4,6 @@
   background-color: antiquewhite;
   max-width: 70%;
   margin: 0 auto;
-}
-.app h1 {
-  font-size: 30px;
-}
-.table {
-  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 4px 8px rgb(250, 219, 178);
 }
