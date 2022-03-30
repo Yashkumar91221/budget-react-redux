@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  background-color: rgb(224, 233, 214);
+  border-radius: 20px;
+  padding: 10px;
+}
+.input {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  flex: 1;
+  margin: 0 10px 0 10px;
+}
+.label {
+  font: large;
+  float: left;
+  width: 200px;
+}
+.row {
+  margin: 0 10px 10px 0;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 5px;
+  display: flex;
+}
+
+.checkbox {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+}
+.button {
+  background-color: #69c3e7;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.input:hover {
+  background-color: rgb(253, 240, 223);
+}
