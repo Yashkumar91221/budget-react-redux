@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../UI/Button";
 import classes from "./EntryLine.module.css";
 import Card from "../UI/Card";
+import { Modal } from "../UI/Modal";
+import { EditForm } from "./EditForm";
 
-export const EntryLine = ({ description, amount, isExpense = false }) => {
+export const EntryLine = ({
+  description,
+  amount,
+  id,
+  isExpense = false,
+  onDeleteEntry,
+  onEdit,
+}) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [newDescription, setNewDescription] = useState(description);
+  const [newAmount, setNewAmount] = useState(amount);
+  const [newIsExpense, setNewIsExpense] = useState(isExpense);
+
+  const deleteHandler = () => {
+    onDeleteEntry(id);
+  };
+
+  const editButtonHandler = () => {
+    setModalOpen(true);
+  };
   return (
     <div className={classes.entryline}>
       <Card>
@@ -14,17 +35,36 @@ export const EntryLine = ({ description, amount, isExpense = false }) => {
             borderTop: "none",
             borderBottom: "none",
             margin: "2px 50px",
+            width: "20%",
             color: `${isExpense ? "red" : "green"}`,
           }}
         >
-          {amount}
-          {` ${isExpense ? "Dr" : "Cr"}`}
+          {`${isExpense ? "-" : "+"} ${amount} `}
         </span>
         <span>
-          <Button color="#f6f7a1">Edit</Button>
-          <Button color="#f07065">Delete</Button>
+          <Button color="#f6f7a1" onClick={editButtonHandler}>
+            Edit
+          </Button>
+          <Button color="#f07065" onClick={deleteHandler}>
+            Delete
+          </Button>
         </span>
       </Card>
+      {modalOpen && (
+        <Modal>
+          <EditForm
+            id={id}
+            description={newDescription}
+            amount={newAmount}
+            isExpense={newIsExpense}
+            setNewDescription={setNewDescription}
+            setNewIsExpense={setNewIsExpense}
+            setNewAmount={setNewAmount}
+            setModalOpen={setModalOpen}
+            onEdit={onEdit}
+          />
+        </Modal>
+      )}
     </div>
   );
 };

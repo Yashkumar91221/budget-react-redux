@@ -1,9 +1,11 @@
 .app {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  background-color: antiquewhite;
+  background-color: rgb(229, 250, 215);
   max-width: 70%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20vh;
   border-radius: 10px;
-  box-shadow: 4px 8px rgb(250, 219, 178);
+  box-shadow: 4px 8px rgb(115, 221, 105);
 }
